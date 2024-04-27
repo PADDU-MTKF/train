@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservation Chart</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{%static 'style/top_panel.css' %}" />
+  </head>
+
+  <body>
+    <div class="top_panel">
+      <h3>HOME</h3>
+    </div>
+    <div class="main">
+      <div class="clear_div">
+        <button class="clear_local_storage" onclick="empty()">CLEAR</button>
+      </div>
+
+      <center>
+        <form action="/raw" method="post">
+          {% csrf_token %}
+          <img id="bglogo" src="{%static 'resources/bglogo.jpg' %}" alt="" />
+          <div class="train_no">
+            <img id="img1" src="{%static 'resources/trainlogo.png' %}" alt="" />
+            <label class="tno">TRAIN NO</label>
+            <input
+              name="tno"
+              type="number"
+              maxlength="5"
+              class="train_no_input"
+              font="copperplate gothic"
+              id="tno"
+            />
+          </div>
+
+          <div class="train_no">
+            <label class="save">SAVE</label>
+            <select
+              name="home_save"
+              id="drop_no"
+              class="train_no_input dropdown"
+            >
+              <option selected value="null">Select From here ...</option>
+            </select>
+          </div>
+          <div>
+            <button
+              disabled
+              type="submit"
+              class="next"
+              id="hnext"
+              name="home_next"
+            >
+              NEXT
+            </button>
+          </div>
+        </form>
+      </center>
+    </div>
+  </body>
+  <script src="{%static 'js/home.js'%}"></script>
+</html>

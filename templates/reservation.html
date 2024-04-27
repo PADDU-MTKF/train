@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %} {% csrf_token %}
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RESERVATION CHART</title>
+    <link rel="stylesheet" href="{% static 'style/reservation.css'%}" />
+  </head>
+
+  <body>
+    <div class="top_panel1">
+      <h3>RESERVATION CHART</h3>
+      <img
+        src="{% static 'resources/infologo.png'%}"
+        alt="error"
+        class="infologo"
+        id="info_logo"
+      />
+    </div>
+    <center>
+      <div class="coach">
+        <label for="" class="lcoach universal_fontcolor">COACH:</label>
+        <select
+          name=""
+          id="coach_drop"
+          class="select universal_fontcolor dropdown"
+        >
+          <option value="null">Select Coach ...</option>
+        </select>
+
+        <label for="" class="coach_no universal_fontcolor cno">COACH NO:</label>
+        <select
+          name=""
+          id="cno_drop"
+          class="select universal_fontcolor dropdown"
+        >
+          <option value="null">Coach No.</option>
+        </select>
+      </div>
+      <div class="sb">
+        <ul>
+          <li>S/B:</li>
+          <li>FROM:</li>
+          <li>TO:</li>
+          <li id="li4">STATUS:</li>
+        </ul>
+      </div>
+      <div class="details"></div>
+      <div class="shreyas">
+        <div id="sb_details"></div>
+      </div>
+    </center>
+    <div class="last_btn">
+      <button class="prev" id="sav" onclick="save_status()">SAVE</button>
+      <button id="sync" class="prev">SYNC</button>
+      <a href="static/varuns_pdf/sync.pdf" download class="download_btn">Download<a>
+    </div>
+  </body>
+  <script>
+    const det_img = "{% static 'resources/details.png' %}";
+    let tno = "{{ tno }}";
+    //created by Abhishek
+    const arrow_icon = "{% static 'resources/drop_icon.png' %}";
+
+    const not_found = "{% static 'resources/not_joined.png' %}";
+    const canceled = "{% static 'resources/cancled.png' %}";
+    const rac = "{% static 'resources/rac_not_cleared.png' %}";
+    const not_checked = "{% static 'resources/not_checked.png' %}";
+    const checked = "{% static 'resources/checked.png' %}";
+    const rac_cleared = "{% static 'resources/rac_cleared.png' %}";
+    const to_be_checked = "{% static 'resources/to_be_checked.png' %}";
+
+    
+    //end by Abhishek
+  </script>
+  <script src="{%static 'js/reservation.js'%}"></script>
+</html>
+<!-- create_details.setAttribute('src', "/static/resources/varun.jpeg"); -->

@@ -1,0 +1,64 @@
+let drop_down = document.createElement("div");
+    drop_down.setAttribute("class", "drop");
+    let opt = document.createElement("div");
+    opt.setAttribute("class", "select_div");
+
+    let p = document.createElement("p");
+    p.setAttribute("class", "p");
+    p.innerHTML = "SELECT";
+    let drop_img = document.createElement("img");
+    drop_img.setAttribute("id", "status_icon");
+    drop_img.setAttribute("src", arrow_icon);
+    // // opt.innerHTML = "abhishek";
+    drop_img.setAttribute("alt", "error");
+    opt.appendChild(p);
+    opt.appendChild(drop_img);
+    drop_down.appendChild(opt);
+    sb_dtls.appendChild(drop_down);
+    // sb_details.appendChild(sb_dtls);
+
+    // creating drop list options****************
+    let drop_list = document.createElement("ul");
+    drop_list.setAttribute("id", "drop_list");
+    drop_list.setAttribute("class", "hide");
+    let drop_list_array = [
+      not_found,
+      canceled,
+      rac,
+      not_checked,
+      checked,
+      rac_cleared,
+      to_be_checked
+    ];
+    for (let item of drop_list_array) {
+      let li = document.createElement("li");
+      li.setAttribute("class", "li_items");
+      let img = document.createElement("img");
+      img.setAttribute("src", item);
+      li.appendChild(img);
+      drop_list.appendChild(li);
+    }
+    sb_details.appendChild(drop_list);
+    sb_details.appendChild(sb_dtls);
+  }
+
+  let select_div = document.getElementsByClassName("select_div");
+  let p_text = document.getElementsByClassName("p");
+  let options = document.getElementsByClassName("li_item");
+  let drop_list = document.getElementById("drop_list");
+  let drop = document.getElementsByClassName("drop");
+  let drop_icon = document.getElementById("status_icon");
+
+  p_text.onclick = function () {
+    drop_list.classList.toggle("hide");
+    drop_icon.classList.toggle("rotate");
+  };
+
+  for (options of options) {
+    options.onclick = function () {
+      select_div.innerHTML = this.textContent;
+      drop_list.classList.toggle("hide");
+      drop_icon.classList.toggle("rotate");
+
+      console.log("hello");
+    };

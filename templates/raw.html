@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservation Chart</title>
+    <link rel="stylesheet" href="{% static 'style/raw.css' %}" />
+  </head>
+
+  <body>
+    <div class="top_panel1">
+      <h3>TRAIN INFO</h3>
+    </div>
+    <center>
+      <div class="info">
+        <label for="" class="trno">TRAIN NO : {{train_no}}</label><br />
+
+        <input
+          type="date"
+          id="date_txt"
+          class="date"
+          placeholder="date"
+          onchange="date_change(event);"
+        />
+
+        <label for="" class="tname universal_fontcolor"
+          >TRAIN NAME : {{train_name}} </label
+        ><br />
+
+        <label for="" class="from universal_fontcolor">FROM : {{From}} </label>
+        <label for="" class="to universal_fontcolor">TO : {{To}} </label><br />
+
+        <div class="coach">
+          <label for="" class="lcoach universal_fontcolor">COACH:</label>
+          <select name="" id="coach_drop" class="dropdown">
+            <option selected value="null">Select Coach ...</option>
+          </select>
+        </div>
+        <div class="another">
+          <label for="" class="coach_no universal_fontcolor">COACH NO:</label>
+          <input type="number" id="coach_no" />
+        </div>
+      </div>
+
+      <div class="raw_data">
+        <ul>
+          <li>S/B:</li>
+          <li>FROM:</li>
+          <li>TO:</li>
+        </ul>
+        <button class="plus">+</button>
+        <hr />
+        <div id="row_info"></div>
+        <div id="row_info1"></div>
+        <div id="row_info2"></div>
+        <div id="row_info3" class="set_border3_div"></div>
+      </div>
+
+      <!-- </div> -->
+      <div>
+        <form method="get">
+          <input type="hidden" name="tno" value="{{train_no}}" />
+          <button
+            type="submit"
+            class="previous"
+            onclick="javascript: form.action='/home';"
+          >
+            PREVIOUS
+          </button>
+          <button
+            type="submit"
+            class="next"
+            onclick="javascript: form.action='/display';"
+          >
+            NEXT
+          </button>
+        </form>
+      </div>
+      <div class="save_clear">
+        <button class="save" onclick="save_raw()">SAVE</button>
+        <button class="clear" onclick="clear_raw()">CLEAR</button>
+      </div>
+    </center>
+  </body>
+  <script>
+    const tno = "{{train_no}}";
+    const tname = "{{train_name}}";
+    const from_dest = "{{From}}";
+    const to_dest = "{{To}}";
+    const Coach = "{{Coach}}";
+    const Station = "{{Station}}";
+  </script>
+  <script src="{% static 'js/raw.js' %}"></script>
+</html>

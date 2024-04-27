@@ -1,0 +1,139 @@
+.top_panel {
+  width: 100%;
+  height: 90px;
+  background-color: #2e9dd6;
+  border-radius: 0px 0px 50px 50px;
+  box-shadow: 0px 3px 16px 1px #707070;
+
+}
+
+* {
+  margin: 0 0;
+}
+
+.train_no {
+  border: 2px solid #707070;
+  margin: auto;
+  width: 315px;
+  height: 70px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin-top: 30%;
+  background-color: white;
+}
+
+.train_no_input {
+  margin-top: 6%;
+  margin-left: 38%;
+  height: 30px;
+  width: 143px;
+}
+
+.main {
+  height: 100%;
+}
+
+input {
+  /* position: absolute; */
+  top: 10px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #707070;
+  font-weight: bold;
+  font-size: large;
+}
+
+label {
+  position: absolute;
+  margin-top: 8%;
+  margin-left: 8%;
+  font-weight: bold;
+  color: #707070;
+}
+
+#img1 {
+  width: 20px;
+  margin-left: -3px;
+  /* display: inline; */
+  position: absolute;
+  margin-top: 26px;
+}
+
+.save {
+  font-size: 24px;
+  margin-left: 2px;
+  margin-top: 22px;
+  color: #707070;
+}
+
+.tno {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 25px;
+  margin-top: 35px;
+  color: #707070;
+}
+
+.dropdown {
+  color: #707070;
+  border: 2px solid #707070;
+  border-radius: 7px;
+  margin-top: 10px;
+  width: 177px;
+  height: 47px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.next {
+  margin-right: 10px;
+  border: none;
+  width: 100px;
+  height: 38px;
+  border-radius: 10px;
+  position: absolute;
+  left: 170px;
+  top: 177px;
+  box-shadow: 0px 3px 16px 1px #707070;
+  background-color: #2e9dd6;
+  color: white;
+  font-weight: bolder;
+
+
+}
+
+#bglogo {
+  opacity: 0.6;
+  width: 385px;
+  margin-top: -15px;
+  position: absolute;
+  margin-left: -190px;
+  z-index: -1;
+}
+
+H3 {
+  color: white;
+  font-size: 3em;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  padding-top: 2%;
+}
+
+
+.clear_local_storage{
+  margin-right: 10px;
+  border: none;
+  width: 100px;
+  height: 38px;
+  border-radius: 10px;
+  position: relative;
+  left: 60px;
+  top: 87px;
+  box-shadow: 0px 3px 16px 1px #707070;
+  /* box-shadow: 0px 9px 10px -6px #707070; */
+  background-color: #2e9dd6;
+  color: white;
+  font-weight: bolder;
+}
